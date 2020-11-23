@@ -10,7 +10,11 @@ const pool = new Pool ({
 });
 
 const getPersons = async (req, res) => {
-    const response = await pool.query('SELECT * FROM persons');    
+    const response = await pool.query(
+        'SELECT p1.person_id, p1.fullname, p1.birth, p2.fullname as father, p3.fullname as mother '+ 
+        'FROM persons p1 '+
+        'LEFT JOIN persons p2 ON p1.father = p2.person_id '+
+        'LEFT JOIN persons p3 ON p1.mother = p3.person_id');    
     res.status(200).json(response.rows);
 }
 
