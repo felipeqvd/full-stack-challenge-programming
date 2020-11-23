@@ -1,0 +1,27 @@
+<div style="width: 1000px; margin: auto;">
+    
+        <h4>Personas</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Identificación</th>
+                    <th>Nombre completo</th>
+                    <th>Fecha nacimiento</th>
+                    <th>Padre</th>
+                    <th>Madre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let person of persons; let i = index">
+                    <td>{{ person.person_id }}</td>
+                    <td>{{ person.identification_number }}</td>
+                    <td>{{ person.fullname }}</td>
+                    <td>{{ person.birth }}</td>
+                    <td>{{ person.father}}</td>
+                    <td>{{ person.mother }}</td>                    
+                </tr>
+            </tbody>
+        </table>      
+    
+</div>

@@ -1,0 +1,48 @@
+<div style="width: 500px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="fullname">Nombre completo</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullname"
+            required
+            [(ngModel)]="person.fullname"
+            name="fullname"
+          />
+        </div>
+
+        <div class="form-group">
+            <label for="identification_number">Número de identificación</label>
+            <input
+              type="text"
+              class="form-control"
+              id="identification_number"
+              required
+              [(ngModel)]="person.identification_number"
+              name="identification_number"
+            />
+          </div>
+  
+        <div class="form-group">
+          <label for="birth">Fecha de nacimiento</label>
+          <input
+            class="form-control"
+            id="birth"
+            required
+            [(ngModel)]="person.birth"
+            type="date"
+            name="birth"
+          />
+        </div>        
+  
+        <button (click)="createPerson()" class="btn btn-success">Crear persona</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h3>Se creó la persona exitosamente!</h3>
+        <button class="btn btn-success" (click)="newPerson()">Crear nueva</button>
+      </div>
+    </div>
+  </div>
